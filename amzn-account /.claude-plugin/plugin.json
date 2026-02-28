@@ -1,0 +1,9 @@
+{
+  "name": "amzn-account",
+  "version": "0.1.0",
+  "description": "Amazon account management assistant for brand monitoring and client reporting",
+  "author": {
+    "name": "Massimo"
+  },
+  "keywords": ["amazon", "ecommerce", "brand-management", "seller", "asin"]
+}
