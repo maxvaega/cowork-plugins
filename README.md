@@ -10,6 +10,7 @@ Install these directly from Cowork, browse the full collection here on GitHub, o
 
 ## Getting Started
 
-### Cowork
-
-Install plugins from [claude.com/plugins](https://claude.com/plugins/).
+## Install a plugin in Cowork
+1. Open the Claude Desktop app and switch to the “Cowork” tab.
+2. Click the “Customize” menu in the left sidebar, which brings together your plugins, skills, and connectors in one place.
+3. Click “Browse plugins” to open a modal where you can view all the available options.
