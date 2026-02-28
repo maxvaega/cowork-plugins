@@ -1,6 +1,15 @@
 # cowork-plugins
 Plugins for claude cowork
 
-## amzn-account 
+| Plugin | How it helps | Connectors |
+|--------|-------------|------------|
+| **[amazon account](./amzn-account)** | Automatically run reports on store status | Claude for Chrome |
 
-Plugin per la gestione di account Amazon: monitora la salute dei brand, verifica gli ASIN e produce report professionali da inviare ai seller.
+
+Install these directly from Cowork, browse the full collection here on GitHub, or build your own.
+
+## Getting Started
+
+### Cowork
+
+Install plugins from [claude.com/plugins](https://claude.com/plugins/).
