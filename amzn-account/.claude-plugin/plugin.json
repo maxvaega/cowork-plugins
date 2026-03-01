@@ -1,11 +1,9 @@
 {
   "name": "amzn-account",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Amazon account management assistant for brand monitoring and client reporting",
   "author": {
-    "name": "Massimo Olivieri"
+    "name": "Massimo"
   },
-  "repository": "https://github.com/maxvaega/cowork-plugins",
-  "license": "MIT",
   "keywords": ["amazon", "ecommerce", "brand-management", "seller", "asin"]
 }
