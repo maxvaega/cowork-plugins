@@ -1,0 +1,24 @@
+{
+  "name": "cowork-plugins",
+  "owner": {
+    "name": "Massimo Olivieri"
+  },
+  "metadata": {
+    "description": "Plugin per Claude Cowork: automazione per account management e operazioni di business"
+  },
+  "plugins": [
+    {
+      "name": "amzn-account",
+      "source": "./amzn-account",
+      "description": "Monitora la salute dei brand Amazon, verifica gli ASIN e produce report professionali in italiano",
+      "version": "0.1.0",
+      "author": {
+        "name": "Massimo Olivieri"
+      },
+      "keywords": ["amazon", "ecommerce", "brand-management", "seller", "asin"],
+      "category": "e-commerce",
+      "repository": "https://github.com/maxvaega/cowork-plugins",
+      "license": "MIT"
+    }
+  ]
+}

@@ -1,6 +1,20 @@
 # cowork-plugins
 Plugins for claude cowork
 
+## Installazione
+
+Aggiungi questo marketplace a Claude Code:
+
+```
+/plugin marketplace add maxvaega/cowork-plugins
+```
+
+Poi installa il plugin:
+
+```
+/plugin install amzn-account@cowork-plugins
+```
+
 | Plugin | How it helps | Connectors |
 |--------|-------------|------------|
 | **[amazon account](./amzn-account)** | Automatically run reports on store status | Claude for Chrome |
