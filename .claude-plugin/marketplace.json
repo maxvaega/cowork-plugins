@@ -11,7 +11,7 @@
       "name": "amzn-account",
       "source": "./amzn-account",
       "description": "Monitora la salute dei brand Amazon, verifica gli ASIN e produce report professionali in italiano",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "Massimo Olivieri"
       },
