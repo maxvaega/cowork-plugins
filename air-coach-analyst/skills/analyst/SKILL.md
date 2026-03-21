@@ -35,9 +35,15 @@ Il MongoDB MCP opera in **modalità read-only** — nessuna modifica ai dati.
 Ci sono due database principali:
 
 **Database principale** (nome configurato via env `DATABASE_NAME`, tipicamente `air_coach` o simile):
-- Collection principale (env `COLLECTION_NAME`): messaggi degli utenti
+- Collection principale: **`conversations.prod`** (usa questo nome esatto, non una variabile env)
   - Ogni documento rappresenta uno scambio utente/AI
-  - Campi principali: `userid`, `message` (testo utente), `timestamp`, `message_id`, `feedback_user` ("positive" | "negative" | null)
+  - Campi principali:
+    - `userId` (camelCase, **non** `userid`) — Auth0 user ID
+    - `human` — testo del messaggio utente
+    - `system` — testo della risposta AI
+    - `llm` — modello usato (es. `"gemini-3-flash"`)
+    - `timestamp` — **stringa** formato `"YYYY-MM-DD HH:MM:SS"` (**NON** ISODate; usare confronto tra stringhe nelle query)
+    - `feedback_user` — `"positive"` | `"negative"` | `null`
 
 **Database `Token_metrics`**:
 - Collection di metriche (env `COLLECTION_NAME`): log token LLM per ogni request
@@ -49,10 +55,12 @@ Ci sono due database principali:
 Usa il tool `find` o `aggregate` del MongoDB MCP. Per scoprire i nomi esatti di database e collection usa `listDatabases` e `listCollections`. Il MCP accetta query in linguaggio naturale oppure sintassi MongoDB.
 
 Esempi di query utili:
-- Messaggi per utente nell'ultima settimana: filtra per `timestamp >= 7 giorni fa`, raggruppa per `userid`
-- Token spesi oggi: filtra `Token_metrics` per `timestamp >= oggi`, somma `total_tokens`
+- Messaggi per utente nell'ultima settimana: filtra `timestamp >= "2026-03-14"` (stringa), raggruppa per `userId`
+- Token spesi oggi: filtra `Token_metrics` per `timestamp >= "2026-03-21"`, somma `total_tokens`
 - Feedback negativi recenti: filtra `feedback_user == "negative"`, ultimi N documenti
-- Utenti più attivi: raggruppa per `userid`, conta messaggi, ordina DESC
+- Utenti più attivi: raggruppa per `userId`, conta messaggi, ordina DESC
+
+**IMPORTANTE — `timestamp` è una stringa:** usa confronto tra stringhe (es. `{ $gte: "2026-03-14" }`), **non** `new Date(...)` o operatori temporali nativi MongoDB.
 
 ---
 
@@ -134,7 +142,7 @@ Consulta [Google AI pricing](https://ai.google.dev/pricing) per i prezzi aggiorn
 
 ## Note Operative
 
-- Il `userid` in MongoDB corrisponde all'ID utente Auth0 (formato: `google-oauth2|...` o `auth0|...`)
+- Il `userId` (camelCase) in MongoDB corrisponde all'ID utente Auth0 (formato: `google-oauth2|...` o `auth0|...`)
 - Il `thread_id` nel backend è formato `{userid}:v{prompt_version}` — utile per tracciare conversazioni per versione di prompt
 - Il `HISTORY_LIMIT` (default: 10) limita il contesto storico inviato all'LLM — da tenere in mente nell'analisi dei pattern conversazionali
 - I dati di Token_metrics e rate_limit_events sono sensibili — non condividere con utenti non autorizzati

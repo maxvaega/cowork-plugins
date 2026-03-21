@@ -37,7 +37,42 @@ Prima di usare il plugin, configura queste variabili d'ambiente:
 | `AIRCOACH_AUTH0_DOMAIN` | Dominio tenant Auth0 | Dashboard Auth0 → Settings |
 | `AIRCOACH_AUTH0_CLIENT_ID` | Client ID per MCP Auth0 | Dashboard Auth0 → Applications → MCP App |
 
-**Nota di sicurezza**: Non inserire mai la connection string MongoDB nella configurazione del plugin. Usa sempre variabili d'ambiente.
+**Nota di sicurezza**: Non inserire mai la connection string MongoDB direttamente nei file di config. Usa sempre variabili d'ambiente.
+
+### Come configurare MONGODB_URI dopo l'installazione del plugin
+
+Il file `.mcp.json` del plugin usa `${AIRCOACH_MONGODB_URI}` come riferimento. Claude Code risolve le variabili d'ambiente al momento dell'avvio del MCP server.
+
+**Metodo consigliato — variabile d'ambiente di sistema:**
+
+1. Apri il file `~/.zshrc` (o `~/.bashrc`)
+2. Aggiungi la riga:
+   ```bash
+   export AIRCOACH_MONGODB_URI="mongodb+srv://user:password@cluster.mongodb.net/?retryWrites=true&w=majority"
+   ```
+3. Ricarica la shell: `source ~/.zshrc`
+4. Riavvia Claude Code per applicare la variabile
+
+**Metodo alternativo — Claude Code `settings.json`:**
+
+Apri `~/.claude/settings.json` (o il file di settings del progetto) e aggiungi la variabile nella sezione `env`:
+
+```json
+{
+  "env": {
+    "AIRCOACH_MONGODB_URI": "mongodb+srv://user:password@cluster.mongodb.net/?retryWrites=true&w=majority"
+  }
+}
+```
+
+Puoi aprire il file di settings con il comando `/settings` in Claude Code.
+
+**Verifica che funzioni:**
+
+Dopo aver configurato la variabile, avvia una conversazione e chiedi:
+> "Connettiti a MongoDB e mostrami i database disponibili"
+
+Se il MCP risponde con la lista dei database, la connessione è configurata correttamente.
 
 ### Configurazione MongoDB MCP
 
