@@ -16,12 +16,12 @@ Carica la skill `analyst` per conoscere lo schema MongoDB completo, poi esegui l
    a. **Traffico giornaliero** — messaggi/giorno negli ultimi 30 giorni
    b. **Utenti attivi** — utenti unici con ≥1 messaggio negli ultimi 7 e 30 giorni
    c. **Distribuzione oraria** — ora di picco (estrai ora con `$substr: ["$timestamp", 11, 2]`)
-   d. **Utenti più attivi** — top 10 per numero totale messaggi (usa dati personali leggendo il profilo utente)
+   d. **Utenti più attivi** — top 10 per numero totale messaggi (confronta le userid con i dati utente)
    e. **Messaggi medi per utente** — media e mediana
 
 2. Se l'utente specifica un periodo diverso da quello di default (es. "ultimi 7 giorni", "questo mese"), adatta le date di conseguenza.
 
-3. Per arricchire il top-10 con profilo utente (qualifiche, dropzone), usa il MCP Auth0 se disponibile; in alternativa, usa il file JSON utenti nella cartella dell'agente.
+3. Per esporre dati utente e comportamenti, non usare mai lo user id ma usa il MCP Auth0 se disponibile; in alternativa, usa il file JSON utenti che trovi nella tua cartella.
 
 4. **Presenta i risultati** in forma di report strutturato con:
    - KPI principali in evidenza

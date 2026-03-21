@@ -24,7 +24,7 @@
       "name": "air-coach-analyst",
       "source": "./air-coach-analyst",
       "description": "Analista dell'applicazione AIR Coach: traffico utenti, metriche LLM, profili Auth0 e analytics Vexo",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "author": {
         "name": "Massimo Olivieri"
       },
