@@ -20,5 +20,18 @@
       "repository": "https://github.com/maxvaega/cowork-plugins",
       "license": "MIT"
     }
+    ,{
+      "name": "air-coach-analyst",
+      "source": "./air-coach-analyst",
+      "description": "Analista dell'applicazione AIR Coach: traffico utenti, metriche LLM, profili Auth0 e analytics Vexo",
+      "version": "0.1.0",
+      "author": {
+        "name": "Massimo Olivieri"
+      },
+      "keywords": ["air-coach", "analytics", "mongodb", "auth0", "vexo", "paracadutismo"],
+      "category": "analytics",
+      "repository": "https://github.com/maxvaega/cowork-plugins",
+      "license": "MIT"
+    }
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "name": "air-coach-analyst",
+  "version": "0.1.0",
+  "description": "Analista dell'applicazione AIR Coach: traffico utenti, metriche LLM, profili Auth0 e analytics Vexo",
+  "author": {
+    "name": "Massimo Olivieri"
+  },
+  "keywords": ["air-coach", "analytics", "mongodb", "auth0", "vexo", "paracadutismo"]
+}
