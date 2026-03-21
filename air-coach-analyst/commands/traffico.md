@@ -19,7 +19,9 @@ Carica la skill `analyst` per conoscere lo schema MongoDB, poi esegui le seguent
 
 3. Se l'utente specifica un periodo diverso da quello di default (es. "ultimi 7 giorni", "questo mese"), adatta le query di conseguenza.
 
-4. **Presenta i risultati** in forma di report strutturato con:
+4. i dati degli utenti: puoi abbinare i dati degli utenti con il plugin di auth0 (se attivo e funzionante), oppure in alternativa con il file json utenti che trovi nella tua cartella
+
+5. **Presenta i risultati** in forma di report strutturato con:
    - KPI principali in evidenza
    - Trend (in crescita, stabile, in calo) dove rilevabile
    - Eventuali anomalie o picchi notevoli
