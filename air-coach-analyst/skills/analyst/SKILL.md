@@ -143,9 +143,8 @@ Consulta [Google AI pricing](https://ai.google.dev/pricing) per i prezzi aggiorn
 ## Note Operative
 
 - Il `userId` (camelCase) in MongoDB corrisponde all'ID utente Auth0 (formato: `google-oauth2|...` o `auth0|...`)
-- Il `thread_id` nel backend è formato `{userid}:v{prompt_version}` — utile per tracciare conversazioni per versione di prompt
 - Il `HISTORY_LIMIT` (default: 10) limita il contesto storico inviato all'LLM — da tenere in mente nell'analisi dei pattern conversazionali
-- I dati di Token_metrics e rate_limit_events sono sensibili — non condividere con utenti non autorizzati
+- se non riesci ad accedere ai dati utente su auth0, usa il file locale `utenti.json` come fallback
 
 Vedi `references/mongodb-schema.md` per schema dettagliato e query di esempio.
 Vedi `references/auth0-schema.md` per schema completo utenti Auth0.
