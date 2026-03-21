@@ -16,7 +16,7 @@ Carica la skill `analyst` per conoscere lo schema MongoDB completo, poi esegui l
    a. **Traffico giornaliero** — messaggi/giorno negli ultimi 30 giorni
    b. **Utenti attivi** — utenti unici con ≥1 messaggio negli ultimi 7 e 30 giorni
    c. **Distribuzione oraria** — ora di picco (estrai ora con `$substr: ["$timestamp", 11, 2]`)
-   d. **Utenti più attivi** — top 10 per numero totale messaggi (usa campo `userId`, non dati personali)
+   d. **Utenti più attivi** — top 10 per numero totale messaggi (usa dati personali leggendo il profilo utente)
    e. **Messaggi medi per utente** — media e mediana
 
 2. Se l'utente specifica un periodo diverso da quello di default (es. "ultimi 7 giorni", "questo mese"), adatta le date di conseguenza.
