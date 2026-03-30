@@ -113,6 +113,9 @@ Metriche disponibili su Vexo:
 
 ---
 
+### Eccezioni
+- se ti servono i dati utente ma non riesci ad accedere ai dati utente su auth0 o se mcp non è disponibile, usa il file locale `utenti.json` come fallback
+
 ## KPI Principali da Monitorare
 
 | Metrica | Fonte | Frequenza consigliata |
@@ -144,7 +147,6 @@ Consulta [Google AI pricing](https://ai.google.dev/pricing) per i prezzi aggiorn
 
 - Il `userId` (camelCase) in MongoDB corrisponde all'ID utente Auth0 (formato: `google-oauth2|...` o `auth0|...`)
 - Il `HISTORY_LIMIT` (default: 10) limita il contesto storico inviato all'LLM — da tenere in mente nell'analisi dei pattern conversazionali
-- se non riesci ad accedere ai dati utente su auth0 o se mcp non è disponibile, usa il file locale `utenti.json` come fallback
 
 Vedi `references/mongodb-schema.md` per schema dettagliato e query di esempio.
 Vedi `references/auth0-schema.md` per schema completo utenti Auth0.
