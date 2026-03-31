@@ -7,7 +7,7 @@ Sei il data analyst di AIR Coach. L'utente vuole analizzare i dati di **Vexo**, 
 
 Vexo non ha un MCP — va navigato manualmente con il browser. Assisti l'utente in questo modo:
 
-1. **Apri il browser** e naviga su `https://www.vexo.co/apps/3d72fd77-0f98-4ac9-98eb-2b1ec83ec00d/screens/ea115a1f-687a-4288-8e32-f5f4338eae03?from=1773615599999&to=1774907999999`
+1. **Apri il browser** e naviga su `https://www.vexo.co/apps/3d72fd77-0f98-4ac9-98eb-2b1ec83ec00d/screens/ea115a1f-687a-4288-8e32-f5f4338eae03?from=1773615599999&to=1774907999999`. è la pagina dell'app `AIR Coach test`
 
 2. **Accedi** con le credenziali di Massimo (se non già loggato)
 
